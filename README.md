@@ -3,5 +3,5 @@ _Este es un programa escrito en Kotlin para un carrito de compras de una tienda,
 
 
 ## Integrantes:
-* *1. Eduardo Rodrigo Lemus Escalante  -  LE240440*
-* *2. Guillermo Alejandro Castillo Campos   -  CC242330*
+* *Eduardo Rodrigo Lemus Escalante  -  LE240440*
+* *Guillermo Alejandro Castillo Campos   -  CC242330*
