@@ -1,8 +1,6 @@
 package tienda.core
 
-import tienda.modelos.*
 import tienda.utils.*
-import tienda.data.*
 
 object MenuAction {
 
@@ -64,7 +62,7 @@ object MenuAction {
 
         print("Cantidad a eliminar (max ${existente.cantidad}): ")
         val cantidad = readLine()?.toIntOrNull()
-        if(cantidad == null || cantidad <= 0) {
+        if(cantidad == null || cantidad <= 0 || cantidad > existente.cantidad) {
             println("Cantidad invalida.")
             return
         }
@@ -89,7 +87,7 @@ object MenuAction {
         val factura = GeneradorFactura.generador(carrito, tasa)
 
         println("\n$factura")
-        print("Confirmar compra? (S/N): ")
+        print("Confirmar compra? ()S/N: ")
         val respuesta = readLine()?.trim()?.lowercase()
 
         if(respuesta == "s" || respuesta == "si") {
@@ -99,10 +97,10 @@ object MenuAction {
             println("Compra realizada con exito.")
         } else {
             // Restauramos el inventario y vaciamos el carrito
-            itemsAntes.forEach { inventario.incrementarStock(it.IdProducto, it.cantidad) }
-            carrito.limpiarCarrito()
-            logger.info("Compra cancelada por usuario. Stock restaurado")
-            println("Compra cancelada. Carrito vaciado y stock restaurado.")
+            // itemsAntes.forEach { inventario.incrementarStock(it.IdProducto, it.cantidad) }
+            // carrito.limpiarCarrito()
+            logger.info("Compra cancelada por usuario.")
+            println("Compra cancelada.")
         }
     }
 }

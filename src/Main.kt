@@ -11,8 +11,8 @@ fun main() {
     val carrito = Carrito()
 
     carrito.agregarListener(object : CarritoEventListener {
-        override fun onItemAdded(item: ItemCarrito) { logger.info("Agregado: ${item.nombre}") }
-        override fun onItemRemoved(item: ItemCarrito) { logger.info("Eliminado: ${item.nombre}") }
+        override fun onItemAdded(item: ItemCarrito) { logger.info("Agregado al carrito: ${item.nombre} X ${item.cantidad}") }
+        override fun onItemRemoved(item: ItemCarrito) { logger.info("Eliminado del carrito: ${item.nombre} X ${item.cantidad}") }
         override fun onCheckout(carrito: Carrito) { logger.info("Checkout total: ${carrito.total()}") }
     })
 

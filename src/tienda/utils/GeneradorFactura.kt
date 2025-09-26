@@ -8,7 +8,7 @@ object GeneradorFactura {
     fun generador(carrito: Carrito, tasas: Double):String {
         val sb = StringBuilder()
         sb.append("======= FACTURA =======")
-        sb.append("Fecha: ${LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))}\n\n")
+        sb.append("\nFecha: ${LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))}\n\n")
         carrito.listaItems().forEach {
             sb.append("${it.nombre} x${it.cantidad} = \$${it.subTotal()}\n")
         }
